@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Living Dex">
+  <meta name="format-detection" content="telephone=no">
+  <title>Mi Living Dex</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" href="icons/icon-192.png" sizes="192x192">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <button id="backBtn" class="icon-btn hidden" aria-label="Volver">‹</button>
+        <div class="brand-wrap">
+          <div class="brand-ball" aria-hidden="true"><span></span></div>
+          <div>
+            <div class="eyebrow">MI COLECCIÓN</div>
+            <h1 id="pageTitle">Living Dex</h1>
+          </div>
+        </div>
+        <button id="menuBtn" class="icon-btn" aria-label="Opciones">•••</button>
+      </div>
+    </header>
+
+    <main id="main" class="main-content" tabindex="-1"></main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <div id="sheetBackdrop" class="sheet-backdrop hidden"></div>
+    <section id="menuSheet" class="bottom-sheet hidden" aria-modal="true" role="dialog" aria-label="Opciones">
+      <div class="sheet-grabber"></div>
+      <h2>Opciones</h2>
+      <button id="installBtn" class="sheet-action">📲 Instalar en iPhone / dispositivo</button>
+      <button id="exportBtn" class="sheet-action">⬇️ Exportar copia de seguridad</button>
+      <label class="sheet-action file-label">⬆️ Importar copia de seguridad<input id="importInput" type="file" accept="application/json,.json"></label>
+      <button id="resetBtn" class="sheet-action danger">🗑️ Borrar todo el progreso</button>
+      <button id="closeSheetBtn" class="sheet-action secondary">Cerrar</button>
+    </section>
+
+    <section id="installSheet" class="bottom-sheet hidden" aria-modal="true" role="dialog" aria-label="Instalar aplicación">
+      <div class="sheet-grabber"></div>
+      <h2>Instalar Living Dex</h2>
+      <div id="installText" class="install-copy"></div>
+      <button id="nativeInstallBtn" class="sheet-action primary hidden">Instalar ahora</button>
+      <button id="closeInstallBtn" class="sheet-action secondary">Cerrar</button>
+    </section>
+  </div>
+  <script src="app.js" defer></script>
+</body>
+</html>
